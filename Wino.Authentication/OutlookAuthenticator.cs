@@ -120,7 +120,7 @@ namespace Wino.Authentication
                 throw;
             }
 
-            throw new AuthenticationException(Translator.Exception_UnknowErrorDuringAuthentication, new Exception(Translator.Exception_TokenGenerationFailed));
+            throw new AuthenticationException(Translator.test2, new Exception(Translator.Exception_TokenGenerationFailed));
         }
     }
 }
