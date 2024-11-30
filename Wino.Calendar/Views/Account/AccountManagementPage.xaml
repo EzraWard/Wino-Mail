@@ -89,7 +89,7 @@
                                     VerticalAlignment="Center"
                                     FontWeight="SemiBold"
                                     Style="{StaticResource BodyTextBlockStyle}"
-                                    Text="{x:Bind domain:Translator.WinoUpgradeDescription}"
+                                    Text="{x:Bind domain:Translator.test5}"
                                     TextTrimming="CharacterEllipsis" />
                             </Grid>
 

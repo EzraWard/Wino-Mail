@@ -4,6 +4,8 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
+		
+		<IncludeSymbols>false</IncludeSymbols>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
@@ -26,6 +28,7 @@
 	<PropertyGroup>
 		<GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
 	</PropertyGroup>
+	
 
 	<Target Name="GetDependencyTargetPaths">
 		<ItemGroup>
