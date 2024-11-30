@@ -1,4 +1,5 @@
 ﻿{
+    "test": "test11",
     "AccountCreationDialog_Completed": "all done",
     "AccountCreationDialog_Initializing": "initializing",
     "AccountCreationDialog_PreparingFolders": "We are getting folder information at the moment.",
