@@ -43,9 +43,14 @@ public sealed partial class MailRenderingPage : MailRenderingPageAbstract,
         Environment.SetEnvironmentVariable("WEBVIEW2_DEFAULT_BACKGROUND_COLOR", "00FFFFFF");
         Environment.SetEnvironmentVariable("WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS", "--enable-features=OverlayScrollbar,msOverlayScrollbarWinStyle,msOverlayScrollbarWinStyleAnimation,msWebView2CodeCache");
 
-        ViewModel.SaveHTMLasPDFFunc = new Func<string, Task<bool>>((path) =>
+        ViewModel.SaveHTMLasPDFFunc = new Func<string, Task<bool>>(async (path) =>
         {
-            return Chromium.CoreWebView2.PrintToPdfAsync(path, null).AsTask();
+            var settings = Chromium.CoreWebView2.Environment.CreatePrintSettings();
+            settings.ScaleFactor = 1.0;                 // Force 100% scale
+            settings.ShouldPrintBackgrounds = true;     // Optional, keeps email background styles
+            settings.ShouldPrintSelectionOnly = false;
+
+            return await Chromium.CoreWebView2.PrintToPdfAsync(path, settings).AsTask();
         });
     }
 
